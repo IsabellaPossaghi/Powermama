@@ -1,0 +1,691 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* menu superiore */
+#header {
+  padding: 1em 1em;
+  border-bottom: 0px solid #ddd;
+  position: fixed;
+  width: 100%;
+  /*colore sfondo header*/
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 99999;
+}
+
+/*caratteristiche logo*/
+.logo img {
+  width: 300%;
+  margin-left: 0em;
+}
+
+#nav {
+  text-align: right;
+  /*allineamento barra*/
+}
+
+#nav ul {
+  list-style-type: none;
+  margin-top: 1.5em;
+}
+
+#nav ul li {
+  display: inline-block;
+  margin-left: 2em;
+}
+
+#nav ul li a {
+  opacity: 1;
+  text-transform: lowercase;
+  /*maiuscolo/minuscolo*/
+  font-weight: 40;
+  /*bold quanto?*/
+  font-size: 20px;
+  /*grandezza scritte*/
+  color: #3A1B67;
+  /*colore scritte header*/
+  letter-spacing: 2px;
+}
+
+.slicknav_menu {
+  /*opzione menù a tendina versione web--> no!*/
+  display: none;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  #nav ul {
+    margin-top: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #nav ul {
+    margin-top: 0.2em;
+    margin-bottom: 0;
+  }
+}
+
+/* gestione del menu per mobile */
+@media screen and (max-width: 768px) {
+  #nav ul {
+    display: none;
+  }
+
+  .slicknav_menu {
+    display: block;
+    background: #fefefe;
+    opacity: 0.9;
+  }
+
+  .slicknav_menu span.slicknav_menutxt {
+    display: none;
+  }
+
+  .slicknav_menu .slicknav_icon {
+    margin: 0.188em 0 0.188em 0;
+  }
+
+  .slicknav_brand span {
+    color: #3A1B67;
+    margin-left: 0.5em;
+  }
+
+  .slicknav_brand img {
+    width: 80px;
+    height: auto;
+  }
+
+  .slicknav_nav a {
+    text-decoration: none;
+    color: #3A1B67;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+  }
+
+  .slicknav_nav .slicknav_row,
+  .slicknav_nav a {
+    padding: 12px 10px;
+    margin: 2px 5px;
+  }
+}
+
+/*greca iniziale coriandoli*/
+#greca {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+/* 01 - intro*/
+div.a {
+  background-position: center center;
+  width: 100%;
+  text-align: center;
+}
+
+.titolo h1 {
+  position: relative;
+  color: #3A1B67;
+  font-size: 65px;
+  letter-spacing: 0.05em;
+  font-family: "Youngserif";
+  padding-bottom: 2%;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  animation: fadeIn ease 2s;
+}
+
+.titolo h3 {
+  display: inline-block;
+  margin-left: 14%;
+  margin-right: 14%;
+  color: #4F4F4F;
+  font-size: 21px;
+  letter-spacing: 2px;
+}
+
+
+/*bottone "scopri di più"*/
+.popup_bottone {
+  background-color: #FFFFFF;
+  border-style: none;
+  color: #3A1B67;
+  font-size: 2vw;
+  padding: 0.6em 1em;
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+  filter: drop-shadow(0px 0px 3px #e6e6e6);
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/*hover bottone popup*/
+.popup_bottone:hover {
+  background: #3A1B67;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/*come appaiono per mobile?*/
+@media screen and (max-width: 768px) {
+  .popup_bottone {
+    display: none;
+  }
+
+  .titolo h1 {
+    font-size: 36px;
+  }
+  .titolo h3{
+    font-size: 16px;
+    padding-bottom: 2%;
+  }
+}
+
+#mamme {
+  padding-bottom: 2.5%;
+  width: 70%;
+  animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.video {
+  width: 70%;
+  height: auto;
+  padding-bottom: 4%;
+  padding-top: 4%;
+}
+
+@media screen and (max-width: 768px) {
+  .video {
+    width: 100%;
+  }
+}
+
+#fiori {
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  padding-bottom: 6%;
+}
+
+@media screen and (max-width: 768px) {
+  #fiori {
+    width: 35%;
+  }
+}
+
+/* 02-slider*/
+#home {
+  overflow: hidden;
+}
+
+.slider-item#slide-1 {
+  background-size: cover;
+}
+
+.slider-item#slide-2 {
+  background-size: cover;
+}
+
+.slider-item#slide-3 {
+  background-size: cover;
+}
+
+.slider-content h2 {
+  position: absolute;
+  font-size: 40px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  display: inline-block;
+  /* per centrare un oggetto verticalmente E orizzontalmente utilizzare absolute position*/
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.highlight {
+  /* per creare effetto sottolineato*/
+  background: linear-gradient(180deg,rgba(255,255,255,0) 10%, #E85033 10%);
+  font-family: "Youngserif";
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-content h2{
+    font-size: 18px;
+    color: #3A1B67
+    left: 50%;
+    display: inline-block;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+  }
+
+}
+
+
+/*FINESTRA POP UP*/
+.modal {
+  display: none;
+  /* nascosto default */
+  position: fixed;
+  /* Fissato */
+  z-index: 0;
+  /* Non avviene scroll dietro */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  /*colore semi trasparente*/
+  background-color: rgba(58, 27, 103, 0.6);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  /* posizione della finestra quando aperta */
+  margin: 7% auto;
+  /* padding interno */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.testo_badges {
+  color: #3A1B67;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Youngserif";
+  letter-spacing: 0.05em;
+}
+
+/* bottone "x" chiusura*/
+.close {
+  color: #3A1B67;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #3A1B67;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.row {
+  height: 40%;
+}
+
+/* Badges - finestra pop-up */
+.col-sm-4 {
+  height: 200px;
+  perspective: 1000px;
+}
+
+.col-sm-4-inner {
+  position: relative;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.col-sm-4:hover .col-sm-4-inner {
+  transform: rotateY(180deg);
+}
+
+.col-sm-4-front, .col-sm-4-back {
+  position: absolute;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.col-sm-4-front {
+  display: block;
+  /* per fare occupare loro tutta la larghezza della finestra*/
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  filter: drop-shadow(0px 0px 3px #e6e6e6);
+  /*NON UTILIZZARE BOX SHADOW*/
+}
+
+.col-sm-4-back {
+  display: block;
+  /* per fare occupare loro tutta la larghezza della finestra*/
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 18px;
+  float: center;
+  transform: rotateY(180deg);
+  filter: drop-shadow(0px 0px 3px #e6e6e6);
+}
+
+/* 03 - funzionalità e features*/
+.section {
+  padding: 1em 0 3em 0;
+}
+
+/* caratteristiche degli headings di sezione, in generale */
+.section-heading {
+  text-align: center;
+  margin: 0 0 2em 0;
+}
+
+.section-heading h2 {
+  display: inline-block;
+  padding-top: 2vw;
+  color: #3A1B67;
+  font-size: 2.5vw;
+  font-family: "Youngserif";
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.section-heading p {
+  text-transform: lowercase;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-heading p {
+    font-size: 14px;
+  }
+
+  .section-heading h2 {
+    padding-top: 8%;
+    font-size: 28px;
+  }
+}
+
+#features {
+  padding-top: 4%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.feature {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.feature img {
+  width: 100%;
+  border-radius: 10px;
+  /* box-shadow: 0px 5px 1px #e6e6e6; */
+  filter: drop-shadow(0px 5px 5px #8c8c8c);
+}
+
+.feature h4 {
+  display: inline-block;
+  padding-top: 2.3em;
+  padding-bottom: 1em;
+  font-size: 36px;
+  font-family: "Youngserif";
+  letter-spacing: 0.05em;
+  color: #3A1B67;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.feature p {
+  text-transform: lowercase;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .feature p {
+    padding-left: 4%;
+    padding-right: 4%;
+    font-size: 14px;
+  }
+
+  .feature h4 {
+    padding-top: 0%;
+    font-size: 24px;
+  }
+}
+
+.hideme {
+  opacity: 0;
+  background-image: url("../img/feature/back.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* come nascondere/gestire elementi schermo ridotto*/
+@media screen and (max-width: 768px) {
+  .feature img {
+    width: 50%;
+  }
+
+  /* importante per l'apparizione durante scrolling */
+  .hideme {
+    background-image: url();
+  }
+}
+
+/* 04 - milestones */
+#milestones-filters {
+  text-align: center;
+}
+
+#milestones-filters ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/*scrivere qui le caratterisctiche dei filtri/bottoni*/
+#milestones-filters ul li {
+  display: inline-block;
+  margin-left: 0.4em;
+}
+
+#milestones-wrapper {
+  text-align: center;
+}
+
+#milestones-wrapper .mix {
+  padding-top: 4%;
+  display: none;
+  margin: 0.2em;
+}
+
+.milestones h4 {
+  text-align: center;
+  padding-top: 2.3em;
+  padding-bottom: 1em;
+  font-size: 36px;
+  font-family: "Youngserif";
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+/*testo visibile SOLO con schermo ridotto --> da associare alle istruzioni sotto
+sostituisco la sezione con i badges con una breve descrizione della funzionalità dell'app*/
+.momenti {
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #3A1B67;
+  padding-right: 5%;
+  padding-left: 5%;
+  display: none;
+}
+
+/*come nascondere/gestire elementi schermo ridotto*/
+@media screen and (max-width: 768px) {
+  .momenti {
+    display: block;
+  }
+
+  #milestones-wrapper {
+    display: none;
+  }
+
+  #milestones-filters {
+    display: none;
+  }
+}
+
+/*modificare bottoni fasi di gravidanza*/
+.filter {
+  background-color: #FFFFFF;
+  border-style: none;
+  color: #3A1B67;
+  font-size: 1vw;
+  padding: 0.6em 1em;
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+  margin-top: 1%;
+}
+
+/*hover bottoni*/
+.filter:hover {
+  background: #3A1B67;
+  color: #FFFFFF;
+}
+
+.milestones-item {
+  width: 24%;
+  height: auto;
+  display: inline-block;
+  margin-bottom: 0.3em;
+}
+
+.milestones-item img {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .milestones-item {
+    width: 49%;
+  }
+}
+
+/* 05 - immagine fotografica */
+#baby {
+  width: 100%;
+}
+
+/* 06 -post esperienza gravidanza */
+#social-carousel {
+  margin-top: 3em;
+}
+
+.data {
+  font-size: 10px;
+  color: #3A1B67;
+}
+
+.social {
+  text-align: center;
+  padding: 1em;
+}
+
+.social h4 {
+  font-size: 21px;
+  font-weight: normal;
+  margin-top: 1em;
+  font-family: "Youngserif";
+  letter-spacing: 0.05em;
+  color: #3A1B67;
+}
+
+.social p {
+  margin-top: 1em;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.social .post {
+  /* border radius fa diventare o quadrato o cerchio, e smussa*/
+  border-radius: 10px;
+  overflow: hidden;
+  /*border: 1px solid #3A1B67;*/
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  filter: drop-shadow(0px 0px 5px #d9d9d9);
+}
+
+.social .post img {
+  width: 100%;
+}
+
+/* 07 - download */
+.download {
+  padding-bottom: 4%;
+}
+
+.container_03 {
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+}
+
+#download {
+  width: 20%;
+  filter: none;
+  filter: drop-shadow(0px 0px 5px #d9d9d9);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+#download:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #download {
+    width: 30%;
+  }
+}
+
+/* 08 - footer */
+#footer {
+  padding-top: 2%;
+  padding-bottom: 1%;
+  background: #3A1B67;
+}
+
+.col-sm-3 {
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #footer {
+    display: none;
+  }
+}

@@ -1,43 +1,545 @@
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-  <title>THE TUBE TRAP</title>
-  <!-- Manually insert your metadata -->
-  <meta property="title" content="THE TUBE TRAP | An analysis on Youtube's Content Farms made for Kids">
-  <meta property="description" content="A recent study published on Research Gate, shows how an incredible amount of inappropriate videos is actually reached by children on Youtube, collecting millions of views before they even get discovered, reported and removed from the platform. The danger for kids is real and YT does not provide content curation service to prevent it. r/Elsagate sub-Reddit still seems to be the right place to speak about those problems, targeting the right ways to make a report, even if not all users respect the rules.">
-  <meta property="og:title" content="THE TUBE TRAP | An analysis on Youtube's Content Farms made for Kids">
-  <meta property="og:description" content="A recent study published on Research Gate, shows how an incredible amount of inappropriate videos is actually reached by children on Youtube, collecting millions of views before they even get discovered, reported and removed from the platform. The danger for kids is real and YT does not provide content curation service to prevent it. r/Elsagate sub-Reddit still seems to be the right place to speak about those problems, targeting the right ways to make a report, even if not all users respect the rules.">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Powermama</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Commissioner:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="./assets/css/custom.css">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Caricamento fonts e pointer -->
+  <style>
+    selettore_elemento:hover {
+      cursor: pointer;
+    }
+
+    @font-face {
+      font-family: Youngserif;
+      src: url(font/YoungSerif.woff);
+    }
+
+    * {
+      font-family: Youngserif;
+    }
+
+    @font-face {
+      font-family: Roboto;
+      src: url(font/Roboto.ttf);
+    }
+
+    * {
+      font-family: Roboto;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/slippry.css" />
+  <link rel="stylesheet" href="css/jquery.slicknav.min.css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="js/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="js/owl-carousel/owl.theme.css">
+
+  <link href="css/custom.css" rel="stylesheet">
 </head>
-<body>
-  <header class="cover">
-      <!--<video class="cover__image" loop autoplay> -->
-<img class="cover__image" src="assets/header_cover.gif">
-   <!-- <source src="assets/glitch.mp4" type="video/mp4"> -->
-    <!--</video>-->
-  </header>
-  <div id="questions-navigation">
-  </div>
-  <main class="container">
-    <div class="intro">
-    </div>
-    <div>
-      <h3>Research questions</h3>
-    </div>
-    <div id="questions">
-      <!-- questions cards will be generated here from home.js -->
-    </div>
-  </main>
-  <main class="container footer">
-    <!-- contents cards will be generated here from info.yml -->
-  </main>
 
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.14.0/js-yaml.min.js" integrity="sha512-ia9gcZkLHA+lkNST5XlseHz/No5++YBneMsDp1IZRJSbi1YqQvBeskJuG1kR+PH1w7E0bFgEZegcj0EwpXQnww==" crossorigin="anonymous"></script>
-  <script src="./load-templates.js"></script>
+<!--colore generale dell'HTML-->
+
+<body style="background-color:#EBE8F0;">
+
+
+  <div id="header" class="d-none d-md-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2 col-md-1 logo">
+          <a href="#home">
+            <img src="img/logo.png">
+          </a>
+        </div>
+        <div class="col-sm-10 col-md-11" id="nav">
+          <ul>
+            <li><a href="#features">L'app</a>
+            </li>
+            <li><a href="#milestones">Incontra le Mamas</a>
+            </li>
+            <li><a href="#download_app">Download</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coriandoli - greca iniziale -->
+  <div class="greca">
+    <img id="greca" src='img/coriandoli.png'>
+  </div>
+
+  <!-- 01 - intro -->
+  <div class="a">
+    <div class>
+      <div class="titolo">
+        <h1>Ricorda. Scopri. Incontra.<br> Not just mamas, Powermamas.</h1>
+        <h3> Un'applicazione creata per chi è neomamma e per chi lo sta per diventare. </h3>
+      </div>
+      <button class="popup_bottone" id="popup">scopri di più</button>
+    </div>
+    <img id="mamme" src='img/mamme.png'>
+  </div>
+  </div>
+
+
+  <!-- video -->
+  <div class="a">
+    <center>
+      <video class="video" controls autoplay loop>
+        <source src="img/video.mp4" type="video/mp4">
+      </video>
+    </center>
+  </div>
+
+
+
+  <!-- greca fiorellini -->
+  <div class="fiori">
+    <img id="fiori" src='img/fiori.png'>
+  </div>
+
+  <!-- 02 - slider -->
+  <div id="home">
+    <div id="slider">
+      <div class="slider-item" id="slide-1" style="background-image: url('img/slide/app.png');">
+        <div class="slider-content">
+          <h2> <span class="highlight"> Mi piace l’idea di poter avere uno strumento che mi consenta di aumentare la mia indipendenza e la mia sicurezza. <br><br> Nathalia <br>
+              In dolce attesa, 33 anni </span> </h2>
+        </div>
+      </div>
+      <div class="slider-item" id="slide-2" style="background-image: url('img/slide/app2.png');">
+        <div class="slider-content">
+          <h2> <span class="highlight">Un’applicazione che mi stimoli a ricordare i momenti cruciali mi aiuterebbe, ma sempre con privacy ben definita. <br><br> Giulia <br>
+              Primo figlio, 29 anni
+            </span> </h2>
+        </div>
+      </div>
+      <div class="slider-item" id="slide-3" style="background-image: url('img/slide/app3.png');">
+        <div class="slider-content">
+          <h2> <span class="highlight">Powermama sarebbe la salvezza, tutto in uno e sul mio spartphone! Risolve i problemi alla radice.<br><br> Carola <br>
+              In dolce attesa, 28 anni </span> </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 03 - spiegazione funzionalità e features-->
+  <div id="features" class="section" data-menu-offset="-100">
+    <div class="container">
+      <div class="section-heading">
+        <!--<h2>L'app</h2>
+        <p>i nostri punti di forza</p>-->
+      </div>
+      <!--si possono aggiungere più classes allo stesso elemento-->
+      <div class="row">
+        <div id="scroll_an" class="col-sm-6 feature hideme column-1">
+          <img src="img/feature/mockup_device_2.png" />
+        </div>
+        <div class="col-sm-6 feature column-2">
+          <h4>Socializzazione</h4>
+          <p>Conosciamo le mamme e sappiamo che sono tutte diverse. Il nostro algoritmo è stato ideato per proporre un’esperienza socialalizzata, <br>adattandosi ad ogni utente e tracciando le evoluzioni nel tempo. Abbiamo pensato strumenti
+            di creazione per tutte le necessità: quando si hanno le mani occupate postare un audio sarà un attimo!
+          </p>
+        </div>
+      </div>
+      <!--secondo row-->
+      <div class="row">
+        <div class="col-sm-6 feature column-3">
+          <h4>Organizzazione</h4>
+          <p>C’è sempre tanto da ricordare, alcune cose più piacevoli altre meno. Sarà facile rivivere i propri ricordi grazie all’organizzazione settimanale dei contenuti, senza dover contare; altrettanto facile prendere appunti nella sezione
+            delle note guidate o riguardarne lo storico.</p>
+        </div>
+        <div id="scroll_an" class="col-sm-6 feature hideme column-4">
+          <img src="img/feature/mockup_device.png" />
+        </div>
+      </div>
+      <!--terzo row-->
+      <div class="row">
+        <div id="scroll_an" class="col-sm-6 feature hideme column-5">
+          <img src="img/feature/mockup_device_3.png" />
+        </div>
+        <div class="col-sm-6 feature column-6">
+          <h4>Sicurezza</h4>
+          <p>Vogliamo che le nostre mamme si sentano il più sicure possibile. <br>Le note non saranno mai pubbliche e i contenuti avranno chiare indicazioni per scegliere se conservarli in modo privato o se condividerli con le altre utenti.
+            Garantiamo l'autorevolezza delle nostri fonti, per un’informazione consapevole e onesta. Non abbiamo nulla da nascondere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--04 - milestones-->
+  <div id="milestones" class="section" data-menu-offset="-100" style="background-color: #F5BC31;">
+    <div class="container">
+      <div class="milestones">
+        <!--introduzione due tipi di fruizioni-->
+        <h4>Colleziona i tuoi momenti</h4>
+      </div>
+      <div class="milestones momenti">
+        <p> L'applicazione ti accompagnerà durante tutta l'esperienza. I tuoi momenti più importanti verranno raccolti e resi unici. Colleziona tutte le illustrazioni! </p>
+      </div>
+      <div id="milestones-filters">
+        <ul>
+          <!--2 differenti filtri-->
+          <li class="filter btn btn-default" data-filter=".gravidanza">gravidanza</li>
+          <li class="filter btn btn-default" data-filter=".neomamma">neomamma</li>
+        </ul>
+      </div>
+
+      <div id="milestones-wrapper">
+
+        <div class="milestones-item mix gravidanza">
+          <img src="img/milestones/pancia.png">
+        </div>
+        <div class="milestones-item mix neomamma">
+          <img src="img/milestones/sport.png">
+        </div>
+        <div class="milestones-item mix gravidanza">
+          <img src="img/milestones/corso.png">
+        </div>
+
+        <div class="milestones-item mix neomamma">
+          <img src="img/milestones/allattamento.png">
+        </div>
+
+        <!--seconda serie-->
+        <div class="milestones-item mix gravidanza">
+          <img src="img/milestones/fame.png">
+        </div>
+        <div class="milestones-item mix gravidanza">
+          <img src="img/milestones/visita.png">
+        </div>
+        <div class="milestones-item mix neomamma">
+          <img src="img/milestones/pass.png">
+        </div>
+
+        <div class="milestones-item mix neomamma">
+          <img src="img/milestones/culla.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+
+    <!--05 - immagine fotografica (mamma) -->
+    <div>
+      <img id="baby" src='img/baby.png'>
+    </div>
+
+    <!-- 06 -post esperienza gravidanza -->
+    <div id="milestones" class="section" data-menu-offset="-100">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Incontra le mamas</h2>
+          <p> Post di mamme come te, esplora la community! </p>
+        </div>
+
+        <div id="social-carousel" class="owl-carousel">
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/hand.jpeg" />
+            </div>
+            <h4>Giulia Aironi</h4>
+            <p class="data">Genova, 2 giugno</p>
+            <p>Finalmente con le sue manine può stringere forte le mie. é nato da poco e già ha la forza di un piccolo leoncino.</p>
+
+          </div>
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/culla.jpeg" />
+            </div>
+            <h4>Antonella Nembri</h4>
+            <p class="data">Lecco, 7 giugno</p>
+            <p>Oggi io e mio marito abbiamo fatto l’ultimo grande acquisto per l’arrivo di Andrea, una culla adorabile! Starà benissimo nella stanzetta celeste che abbiamo preparato per lui.</p>
+
+          </div>
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/drago.jpeg" />
+            </div>
+            <h4>Irene Villa</h4>
+            <p class="data">Mantova, 25 maggio</p>
+            <p>Finalmente il mio piccolo ha potuto conoscere i suoi nonni, e sembra proprio che non abbiano aspettato un attimo per iniziare a viziarlo come si deve! </p>
+
+          </div>
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/shoes.jpeg" />
+            </div>
+            <h4>Martina Volo</h4>
+            <p class="data">Torino, 1 giugno</p>
+            <p>Oggi sono andata con il mio compagno a fare un po’ di shopping pre-natale. Non sono riuscita a trattenermi davanti a delle scarpettine arancioni a forma di leoncino! </p>
+          </div>
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/words.jpeg" />
+            </div>
+            <h4>Paola Mandella</h4>
+            <p class="data">Andorra, 21 giugno</p>
+            <p>Per il gran caldo faccio fatica a muovermi e mi hanno detto di stare a riposo. Ecco cosa ho fatto oggi pomeriggio per far passare un po’ il tempo...carino non è vero?</p>
+          </div>
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/lilac.jpeg" />
+            </div>
+            <h4>Sara Bianchi</h4>
+            <p class="data">Albenga, 16 giugno</p>
+            <p>Come trascorrere una domenica migliore se non passandola nel verde del bosco dietro la casa dei nonni. </p>
+
+          </div>
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/belly.jpeg" />
+            </div>
+            <h4>Elisa Scarpa</h4>
+            <p class="data">Milano, 19 giugno</p>
+            <p> Sento la mia piccolina che si muove in continuazione, non vedo l’ora di poterle stringere la manina...</p>
+
+          </div>
+
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/gravidanza.jpeg" />
+            </div>
+            <h4>Viola Galbiati</h4>
+            <p class="data">Lodi, 23 giugno</p>
+            <p>Ho raccolto delle margherite, passeggiare mi fa bene e sento meno la stanchezza</p>
+
+          </div>
+
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/tutina.jpeg" />
+            </div>
+            <h4>Chiara Ferrari</h4>
+            <p class="data">Milano, 7 giugno</p>
+            <p>La scorsa settimana abbiamo preso l’armadietto nuovo per la futura stanzetta di Beatrice. Ieri finalmente ci siamo dati allo shopping delle tutine. </p>
+
+          </div>
+
+          <div class="social">
+            <div class="post">
+              <img src="img/ug_contents/standing.jpg" />
+            </div>
+            <h4>Alessandra Marchesi</h4>
+            <p class="data">Cernusco, 4 maggio</p>
+            <p>Il mio Pietro sta iniziando a camminare! Ogni angolo della casa è diventato una palestra per lui, certe volte lo trovo davvero in posti impensabili. </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- greca fiorellini -->
+    <div class="fiori">
+      <img id="fiori" src='img/fiori.png'>
+    </div>
+
+    <!--07 - sezione download-->
+    <!--utilizzare col-6 invece che col-cm-6 per mantenere le colonne sullo schermo minore-->
+    <div id="download_app" class="download" data-menu-offset="-100">
+      <div class="section-heading">
+        <h2>Scarica l'app</h2>
+        <p> disponibile per android e ios </p>
+      </div>
+      <div class="container_03">
+        <div class="row">
+          <div class="col-6 feature">
+            <img id="download" src="img/download/android.svg" />
+
+          </div>
+          <div class="col-6 feature">
+            <img id="download" src="img/download/apple.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 08 - footer -->
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <p> Politecnico di Milano <br>Scuola del Design <br><br> Laboratorio di Sistemi <br> per l'interazione</p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <!-- voglio occupare solo le due colonne laterali -->
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <!-- voglio occupare solo le due colonne laterali -->
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p> a project by <br> Mauri Francesca <br> Possaghi Isabella <br> Ramella Virgilia <br> Anna Vassena </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--FINESTRA POP UP-->
+    <div>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <div class="testo_badges">
+            <h2>Quale Powermama sarai?</h2>
+            <div>
+
+              <!-- prima serie -->
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/pollice.png" alt="post" height=100%>
+                      <p>Pollice verde</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/cenerentola.png" alt="post" height=100%>
+                      <p>Cenerentola</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/ansia.png" alt="post" height=100%>
+                      <p>Ansia vera</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- seconda serie -->
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/gusto.png" alt="post" height=100%>
+                      <p>Buongustaia</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/insonne.png" alt="post" height=100%>
+                      <p>Insonne</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/libro.png" alt="post" height=100%>
+                      <p>Libromaniaca</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- terza serie -->
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/yoga.png" alt="post" height=100%>
+                      <p>Yoga master</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/party.png" alt="post" height=100%>
+                      <p>Party animal</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4-inner">
+                    <div class="col-sm-4-front">
+                      <img src="img/badges/retro.png" alt="post" height=100%>
+                    </div>
+                    <div class="col-sm-4-back">
+                      <img src="img/badges/divano.png" alt="post" height=100%>
+                      <p>Divanologa</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--wrap con <a> per fare la href-->
+          <a href="#download_app">
+            <center> <button id="chiudi_bottone" class="popup_bottone">download</button>
+              <center>
+          </a>
+        </div>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+
+        <script src="js/slippry.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.mixitup.min.js"></script>
+        <script src="js/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/skrollr.min.js"></script>
+        <script src="js/skrollr.menu.min.js"></script>
+
+        <script src="js/custom.js"></script>
+
 </body>
+
 </html>
